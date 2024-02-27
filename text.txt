@@ -1,0 +1,14 @@
+venv/pyvenv.cfg
+
+home = L:\Python312
+include-system-site-packages = false
+version = 3.12.1
+executable = L:\Python312\python.exe
+command = L:\Python312\python.exe -m venv H:\Sites\blog-api-django\blog\venv
+
+
+home = D:\python-3.12.0
+include-system-site-packages = false
+version = 3.12.1
+executable = D:\python-3.12.0\python.exe
+command = D:\python-3.12.0\python.exe -m venv H:\Sites\blog-api-django\blog\venv

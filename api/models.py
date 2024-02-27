@@ -6,6 +6,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
     body = models.TextField(blank=True, default='')
     owner = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
+    poster = models.TextField(default='')
 
     class Meta:
         ordering = ['created']
@@ -34,6 +35,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
     author = models.ForeignKey('Author', related_name='books', on_delete=models.CASCADE)
     genre = models.ForeignKey('Genre', related_name='books', on_delete=models.CASCADE)
+    cover = models.ImageField(upload_to='uploads/', default='')
 
     class Meta:
         verbose_name_plural = 'books'
@@ -48,6 +50,7 @@ class Author(models.Model):
 
 class Genre(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
+    description = models.CharField(max_length=100, blank=True, default='')
 
     class Meta:
         verbose_name_plural = 'genres'

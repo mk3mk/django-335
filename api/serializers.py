@@ -19,7 +19,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'body', 'owner', 'comments', 'categories']
+        fields = ['id', 'title', 'body', 'owner', 'comments', 'categories', 'poster']
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -46,11 +46,11 @@ class BookSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Book
-        fields = ['id', 'title', 'author', 'genre']
+        fields = ['id', 'title', 'author', 'genre', 'cover']
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-    name = serializers.ReadOnlyField(source='author.name')
+    # name = serializers.ReadOnlyField(source='author.name')
 
     class Meta:
         model = Author
@@ -58,8 +58,9 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 
 class GenreSerializer(serializers.ModelSerializer):
-    title = serializers.ReadOnlyField(source='genre.title')
+    # title = serializers.ReadOnlyField(source='genre.title')
+    # description = serializers.ReadOnlyField(source='genre.description')
 
     class Meta:
         model = Genre
-        fields = ['id', 'title']
+        fields = ['id', 'title', 'description']
